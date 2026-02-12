@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地方美食地圖</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss01.css">
+</head>
+<style>
+    .content_box{
+        margin-top: 15px;
+        box-shadow: 2px 2px 4px 2px var(--kebuke-gradient01);
+        padding: 10px;
+        border-radius: 5px;
+    }
+</style>
+<body>
+    <div class="title-01 text-center">地方美食列表</div>
+    <div class="container">
+        <div class="row" id="myrow">
+            <div class="col-md-6 col-lg-4 col-xl-3 roller-l">
+                <div class="content_box roller-l">
+                    <div class="roller-l_box">
+                        <button class="btn btn-primary">查看更多</button>
+                    </div>                                                            
+                <div style="background-image: url(images/cat-5.jpg); height: 160px; background-position: center center;block-size: cover;border-radius: 5px;"></div>
+                <div class="h3 text-center fw-900">餐廳名稱</div>
+                <div class="h5">電話:XXXXXXXXX</div>
+                <div class="h5">地址:XXXXXXXXX</div>
+                <p>簡介:最好的回家吃螺絲尺寸產生使用的人污染沒事台鐵付款室內，資源病毒公斤身後土地而是廣播國產基金衣服心情化工，本月制定失去紀念正好費用二十您是就要義務比較差不多足夠很容易，傳來採訪網際快車組成生成，屏東足夠打印特殊壓縮從而改造身後不太一致交通是一個，物業用於高。</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <script>
+        $(function(){
+            $.ajax({
+                type: "GET",
+                url: "js/json/TravelFood.json",
+                dataType:"json",
+                success: showdata,
+                error: function(){
+                    console.log("error - js/json/TravelFood.json");
+                }
+
+            });
+        });
+
+        function showdata(data){
+            console.log(data);            
+            $("#myrow").empty();
+            data.forEach(function(item) {
+            // 資料處理 防呆 使用三元運算子    
+            let img =item.PicURL ? item.PicURL :"images/still_work.jpg";
+            let tel = item.Tel ? item.Tel : "無" 
+            let name = item.Name ? item.Name : "無";
+            let address = item.Address ? item.Address : "無";
+            let hostwords = item.HostWords ? item.HostWords.substring(0, 30) : "無"; 
+
+            let strHTML = ` <div class="col-md-6 col-lg-4 col-xl-3 roller-l">
+                                    <div class="content_box roller-l">
+                                        <div class="roller-l_box">
+                                             <button class="btn btn-primary">查看更多</button>
+                                        </div>                                                            
+                                    <div style="background-image: url('${img}'); height: 160px; background-position: center center;block-size: cover;border-radius: 5px;"></div>
+                                    <div class="h3 text-center fw-900">${item.Name}</div>
+                                    <div class="h5">電話: ${item.Tel}</div>
+                                    <div class="h5">地址: ${item.City}${item.Town}${item.Adress}</div>
+                                    <p>簡介:${item.HostWords}</p>
+                                    </div>
+                                </div>`;
+                $("#myrow").append(strHTML)
+            });
+        }
+    </script>
+</body>
+</html>
