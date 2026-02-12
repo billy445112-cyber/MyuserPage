@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>youbike 出借資料表</title>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/mycss01.css">
+    <link rel="stylesheet" href="CSS/table-rwd.css">
+<style>
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="title-01 text-center">youbike出借資料表</div>
+        <table class="table table-rwd">
+            <thead>
+                <tr>
+                    <th>編號</th>
+                    <th>名稱</th>
+                    <th>車輛總數</th>
+                    <th>已租借數</th>
+                    <th>可租借數</th>
+                </tr>
+            </thead>
+            <tbody id="mybody">
+                <tr>
+                <td data-th="編號">xxx</td>
+                <td data-th="名稱">xxx</td>
+                <td data-th="車輛總數">xxx</td>
+                <td data-th="已租借數">xxxx</td>
+                <td data-th="可租借數">xx</td>
+                </tr>                
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <script>
+        $(function(){
+            // 讀取youbike - opendata
+            $.ajax({
+                type: "GET",
+                url: "js/json/youbike_immediate.json",
+                dataType: "json",
+                success: showdata,
+                error: function(){
+                    console.log("error - js/json/youbike_immediate.json");
+                }
+            });
+        });
+
+        function showdata(data){
+            console.log(data);
+            
+            $("#mybody").empty();
+            data.forEach(function(item){                
+                let strHTML = `<tr>
+                                <td data-th="編號">${item.sno}</td>
+                                <td data-th="名稱">${item.sna}</td>
+                                <td data-th="車輛總數">${item.Quantity}</td>
+                                <td data-th="已租借數">${item.available_rent_bikes}</td>
+                                <td data-th="可租借數">${item.available_return_bikes}</td>                                
+                               </tr>`;
+                $("#mybody").append(strHTML) 
+            });
+        }
+    </script>
+</body>
+</html>

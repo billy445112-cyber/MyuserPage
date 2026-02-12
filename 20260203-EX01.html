@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習01. 使用CSS語法配置版面-Bootstrap修改</title>
+    <link rel="stylesheet" href="css/mycss01.css">
+    <style>
+        body {
+            background-color: var(--mycolor01);
+        }
+
+        .wrapper {
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: auto;
+            margin-right: auto;
+            width: 1024px;
+        }
+
+        /* 當圖片過大時，強制限制大小 */
+        .wrapper .banner img {
+            /* 寬度 */
+            width: 100%;
+        }
+
+        nav {
+            background-color: var(--mycolor04);
+            text-align: center;
+        }
+
+        nav ul {
+            display: inline-block;
+        }
+
+        nav ul li {            
+            float: left;
+            /* 標號調整 */
+            list-style-type: none;
+        }
+
+        nav ul li a{
+            display: block;
+            background-color: var(--mycolor02);
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 20px;
+            padding-right: 20px;
+            text-decoration: none;
+            color: var(--mycolor05);
+            font-size: 15px;
+            margin-right: 10px;  
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px 2px var(--mycolor05);          
+        }
+
+        nav ul li a:hover{
+            background-color: var(--mycolor03);            
+        }
+        .content {
+            background-color: var(--mycolor03);
+            padding-top: 30px;
+            padding-bottom: 30px;
+            padding-left: 50px;
+            padding-right: 50px;
+            text-align: center;
+        }
+        .content h1{
+            color: var(--mycolor05);
+        }
+        .content p{
+            font-size: 20px;
+        }
+        .content a{
+            display: block;
+            width: 150px;
+            height: 50px;
+            background-color: var(--mycolor02);
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: auto;
+            margin-right: auto;
+            text-decoration: none;
+            font-size: 20px;
+            line-height: 50px;
+            color: var(--mycolor05);
+        }
+        .content a:hover{
+            background-color: var(--mycolor04);
+        }
+        .footer {
+            background-color: var(--mycolor04);
+            padding-top: 2px;
+            padding-bottom: 2px;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-align: center;
+        }
+        /* 限制網頁畫面維持在1024px，超過則改用下列之條件-目的是在其他平台也能正常使用 */
+        @media screen and (max-width: 1024px){
+            .wrapper{
+                width: 100%;
+            }
+            nav ul{
+                display: block;
+            }
+            nav ul li{
+                width: 100%;
+            }
+            .content p{
+                font-size: 14px;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="banner">
+            <img src="https://picsum.photos/id/684/1440/220" alt="">
+            <!-- 選單 --><!-- 快捷鍵:ul>li*5>a -->
+            <nav>
+                <ul>
+                    <li><a href="">首頁</a></li>
+                    <li><a href="">最新消息</a></li>
+                    <li><a href="">合作店家</a></li>
+                    <li><a href="">關於我們</a></li>
+                    <li><a href="">聯絡我們</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <h1>歡迎光臨</h1>
+            <p>眼裡自由充滿，困難電子郵件內心這一功能創新說完事業房屋女子空調更為翻譯，得分生命整個，歌詞加入時間突然所以看看廣告生活你知道減少，可用詳細星座使得連續版面傢俱，到達模型，第二章想到主角，試題經過一台簽名官方為什麼難得行情稱為，市場價出席雙方具備大大西部站。</p>
+            <p>字幕隨時感覺到浙江很多今天醫藥英雄下面必然民主，氣息建立工商條件類似國務院專輯降價適當註明關鍵，這樣更好為什麼加速湖口污染控制攻擊突出更多，其他的初音至今使用名稱長度不限價格一半我看演唱同意好激動財務，雙手取消註冊天天另一個億元，蒐集您是，各國力量名單告。</p>
+            <p>繼續導演財產這段是一個眼前坐在厲害行情伺服器戰爭大會，一張好像，接口氣氛，說道出現觀點課程體驗很多人連結願意高中，解釋當地論文豐富共有大多轉換，春節課程外貿螢幕金錢國內見過魔法翻譯，選單收到看法出台集中審核解決如此出生概念，分享賺錢鎖定，預測得分排名，頻。</p>
+            <a href="">了解更多</a>
+        </div>
+        <div class="footer"></div>
+            <nav>
+                <ul>
+                    <li>版權歸XXX所有2026年</li>
+                </ul>
+            </nav> 
+    </div>
+</body>
+
+</html>
