@@ -1,0 +1,128 @@
+/* 導入文字字體 */
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap');
+/* 使用文字字體(Noto Serif TC是專有代號不用背) */
+body{
+    font-family: "Zen Maru Gothic", sans-serif;
+}
+/* 配色 */
+:root {
+    /* 建議適用於背景色或大面積使用 */
+    --background_01: rgba(255, 255, 255, 0.95);
+    /* 建議適用於次要元素、按鈕、卡片 */
+    --mycolor02: #B3C8CF;
+    /* 建議適用於文字內容、圖標 */
+    --mycolor03: #7A8B99;
+    /* 建議適用於標題、強調元素 */
+    --mycolor04: #4A5568;
+    --mycolor05: #2F4538;
+    /* 主要色 */
+    --kebuke-brown: #8B4513;
+    --kebuke-milk-tea: #D4A574;
+    --kebuke-ivory: #F5F5DC;
+    --kebuke-navy: #1B4D7C;
+    /* 輔助色 */
+    --kebuke-light-tea: #E8D5C4;
+    --kebuke-camel: #C19A6B;
+    --kebuke-blue: #4A7BA7;
+    --kebuke-dark: #2C2C2C;
+    /* 漸層 */
+    --kebuke-gradient01: linear-gradient(to right, #8B4513 0%, #D4A574 100%);
+    --kebuke-gradient02: linear-gradient(circle, #1B4D7C 0%, #4A7BA7 100%);
+    /* 背景色 */
+    --background-01:#3d4f5c;
+    --background-01:#3e4f5d;
+    /* logo色 */
+    --logo-01:#00ff41;
+    --logo-02:#0dff50;
+    --logo-03:#00d639;
+    --logo-04:#00ff41;
+
+}
+
+/* 文字相關 */
+.fw-100{
+    font-weight: 100;
+}
+.fw-200{
+    font-weight: 200;
+}
+.fw-300{
+    font-weight: 300;
+}
+.fw-400{
+    font-weight: 400;
+}
+.fw-500{
+    font-weight: 500;
+}
+.fw-600{
+    font-weight: 600;
+}
+.fw-700{
+    font-weight: 700;
+}
+.fw-800{
+    font-weight: 800;
+}
+.fw-900{
+    font-weight: 900;
+}
+
+.title-01{
+    font-size: 50px;
+    font-weight: 900;
+    color: var(--kebuke-brown);
+    text-shadow: 
+        2px 5px var(--kebuke-dark),
+        20px 4px 8px rgba(0, 0, 0, 0.6);
+    letter-spacing: 3px;         
+}
+.title-02{
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--kebuke-navy);
+}
+.title-03{
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--mycolor05);
+}
+.title-04 {
+    font-size: 50px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #d4a574 0%, #8b5a3c 50%, #d4a574 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 
+        1px 1px 0 rgba(139, 90, 60, 0.3),
+        2px 2px 0 rgba(139, 90, 60, 0.3),
+        3px 3px 0 rgba(139, 90, 60, 0.3),
+        4px 4px 0 rgba(139, 90, 60, 0.3),
+        5px 5px 15px rgba(212, 165, 116, 0.8),
+        8px 8px 25px rgba(0, 0, 0, 0.5);
+    letter-spacing: 3px;
+    filter: drop-shadow(0 0 20px rgba(212, 165, 116, 0.6));
+}
+.title-06 {
+    font-size: 50px;
+    font-weight: 900;
+    background: linear-gradient(180deg, 
+        #f4e4c1 0%, 
+        #d4a574 30%, 
+        #8b5a3c 50%, 
+        #d4a574 70%, 
+        #f4e4c1 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 
+        2px 2px 0 rgba(60, 40, 20, 0.4),
+        4px 4px 0 rgba(60, 40, 20, 0.3),
+        6px 6px 0 rgba(60, 40, 20, 0.2),
+        8px 8px 20px rgba(0, 0, 0, 0.6),
+        12px 12px 30px rgba(0, 0, 0, 0.4);
+    letter-spacing: 3px;
+    position: relative;
+}
+
